@@ -105,8 +105,8 @@ findNodes(myapp.paint)  // 객체의 메서드를 콜백함수로 가진다. mya
 findNodes(myapp.paint, myapp)
 
 let findNodes = function(cbMethod, cbObject) {
-    if (typeof callback === "function") {
-        callback.call(cbObject, found)
+    if (typeof cbMethod === "function") {
+        cbMethod.call(cbObject, found)
     }
 }
 ```
@@ -122,7 +122,7 @@ let findNodes = function(cbMethod, cbObject) {
     }
     //
     if (typeof cbMethod === "function") {
-        callback.call(cbObject, found)
+        cbMethod.call(cbObject, found)
     }
  }
 ```
@@ -135,7 +135,7 @@ let findNodes = function(cbMethod, cbObject) {
 document.addEventListener("click", console.log, false)
 ```
 
-대부분의 클라이언트 브라우저 프로그래밍은 event-driven 방식이다. 자바스크립트가 event-driven 프로그래밍에 적합한 이유는 프로그램이 비동기적으로 동작할 수 있게 하는 콜백 패터 덕분이다.
+대부분의 클라이언트 브라우저 프로그래밍은 event-driven 방식이다. 자바스크립트가 event-driven 프로그래밍에 적합한 이유는 프로그램이 비동기적으로 동작할 수 있게 하는 콜백 패턴 덕분이다.
 
 ## 5. 타임아웃
 
